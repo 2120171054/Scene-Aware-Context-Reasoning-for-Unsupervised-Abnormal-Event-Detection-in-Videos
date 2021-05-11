@@ -49,9 +49,9 @@ if __name__ == '__main__':
     im_width=args.im_width
 
     if MODE=='train':
-        dataset_dirs = '/mnt/sdb/mnt/sda/sunche/dataset/abnormal_event/videos/avenue/training_frames'
+        dataset_dirs = AVENUE_DIR+'training_frames'
     else:
-        dataset_dirs = '/mnt/sdb/mnt/sda/sunche/dataset/abnormal_event/videos/avenue/testing_frames'
+        dataset_dirs = AVENUE_DIR+'testing_frames'
     
     f=h5py.File(MAIN_DIR+'/data/avenue/avenue_video_'+MODE+'_proposals.h5','r') # object proposals' dir
     obj_data=[]
