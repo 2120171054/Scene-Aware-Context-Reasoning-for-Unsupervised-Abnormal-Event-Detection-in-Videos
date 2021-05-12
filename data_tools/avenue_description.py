@@ -35,7 +35,8 @@ def record_obj(i,object_counter,box_):
     box[1],box[3]=box_[1]+im_height*int(i/2),box_[3]+im_height*int(i/2)
     return {'object_id' : int(object_counter), 'merged_object_ids':[], 'synsets' : ['person.n.01'], 'names':[object_list[object_counter%10]],'x':float(box[0]), 'y':float(box[1]), 'w':float(box[2] - box[0]),'h': float(box[3] - box[1])}
 def record_rel(rel_counter,obj,sub):
-    return {'predicate':rel_list[rel_counter%50],'object':obj,'subject':sub,'relationship_id':int(rel_counter),'synsets':['snear_r.01']}
+    return {'predicate':rel_list[rel_counter%10],'object':obj,'subject':sub,'relationship_id':int(rel_counter),'synsets':['snear_r.01']} #  Choose any 10 names for obe_name and rel_list
+
 def isvaliad(box,threshold):
     if float(box[2] - box[0])*float(box[3] - box[1])>threshold:
         return True
